@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "613e3b64-0960-47b4-9cb2-b4cc46dc2172",
+		"name": "USER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27925249",
+		"_collection_link": "https://planetary-flare-154226.postman.co/workspace/-testing~a4f41396-ad85-4f09-8003-8a0ab76cfd17/collection/27925249-613e3b64-0960-47b4-9cb2-b4cc46dc2172?action=share&creator=27925249&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname_user\"  : \"Izaaz Waskito Widyarto\",\r\n    \"email_user\" : \"izaaz.waskito2@gmail.com\",\r\n    \"password_user\" : \"Adenia525\",\r\n    \"role_user\" : \"customer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email_user\" : \"izaaz.waskito@gmail.com\",\r\n    \"password_user\" : \"Adenia525\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbF91c2VyIjoiaXphYXoud2Fza2l0QGdtYWlsLmNvbSIsInJvbGVfdXNlciI6InNlbGxlciIsImlhdCI6MTY4NzMzNDMxNywiZXhwIjoxNjg3MzM3OTE3fQ.YwNJz6ITe_rikqG1qq2JZ4TfB1a7Mb9fchMRQFb7hYs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbF91c2VyIjoiaXphYXoud2Fza2l0b0BnbWFpbC5jb20iLCJyb2xlX3VzZXIiOiJzZWxsZXIiLCJpYXQiOjE2ODczNDc4OTUsImV4cCI6MTY4NzQzNDI5NX0.py_SRWgoYqk-JpC-8yKEGZiJCJhbGp-Xt08OCAOYHWE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/refreshtoken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"refreshtoken"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
