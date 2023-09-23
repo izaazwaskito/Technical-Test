@@ -4,7 +4,7 @@
   <p align="center">
     <a href="https://github.com/izaazwaskito/Technical-Test"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://blanja-be-alpha.vercel.app/">Api Demo</a>
+    <a href="https://technical-test-sable.vercel.app/">Api Demo</a>
   </p>
 </p>
 
