@@ -15,9 +15,6 @@
   - [Built With](#built-with)
 - [Installation](#installation)
   - [Documentation](#documentation)
-  - [Related Project](#related-project)
-- [Contributors](#contributors)
-  - [Meet The Team Members](#meet-the-team-members)
 
 # About The Project
 
@@ -96,7 +93,3 @@ Documentation files are provided in the [docs](./docs) folder
 API endpoint list are also available as published postman documentation
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/27925249/2s9YCBuprb)
-
-## Related Project
-
-Project link : [https://github.com/izaazwaskito/Technical-Test](https://github.com/izaazwaskito/Technical-Test)
