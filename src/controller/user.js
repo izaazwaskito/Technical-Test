@@ -1,14 +1,14 @@
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-let { insertUser, findEmail } = require("../model/user");
+let { insertUser, findUsername } = require("../model/user");
 const authHelper = require("../helper/auth");
 const commonHelper = require("../helper/common");
 
 let userController = {
   registerUser: async (req, res) => {
-    let { fullname_user, email_user, password_user, role_user } = req.body;
-    const { rowCount } = await findEmail(email_user);
+    let { username_user, password_user } = req.body;
+    const { rowCount } = await findUsername(username_user);
     if (rowCount) {
       return res.json({ message: "Email Already Taken" });
     }
@@ -17,10 +17,8 @@ let userController = {
 
     const data = {
       id_user,
-      email_user,
+      username_user,
       passwordHash_user,
-      fullname_user,
-      role_user,
     };
     insertUser(data)
       .then((result) =>
@@ -29,10 +27,10 @@ let userController = {
       .catch((err) => res.send(err));
   },
   loginUser: async (req, res) => {
-    const { email_user, password_user } = req.body;
+    const { username_user, password_user } = req.body;
     const {
       rows: [user],
-    } = await findEmail(email_user);
+    } = await findUsername(username_user);
     if (!user) {
       return res.json({ message: "Email Wrong" });
     }
@@ -45,7 +43,7 @@ let userController = {
     }
     delete user.password_user;
     const payload = {
-      email_user: user.email_user,
+      username_user: user.username_user,
       role_user: user.role_user,
     };
     user.token_user = authHelper.generateToken(payload);
@@ -54,10 +52,10 @@ let userController = {
   },
 
   profileUser: async (req, res) => {
-    const email_user = req.payload.email_user;
+    const username_user = req.payload.username_user;
     const {
       rows: [user],
-    } = await findEmail(email_user);
+    } = await findUsername(username_user);
     delete user.password_user;
     commonHelper.response(res, user, 200);
   },
@@ -66,7 +64,7 @@ let userController = {
     const refreshToken = req.body.refreshToken;
     const decoded = jwt.verify(refreshToken, process.env.SECRETE_KEY_JWT);
     const payload = {
-      email_user: decoded.email_user,
+      username_user: decoded.username_user,
       role_user: decoded.role_user,
     };
     const result = {
