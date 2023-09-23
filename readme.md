@@ -21,11 +21,26 @@
 
 # About The Project
 
-Blanja is an E-commerce website project that aims to provide an easy and convenient online shopping experience for users in Indonesia. The site offers a wide range of products, including fashion, beauty, electronics, and food and beverages.
+Membuat api sesuai dengan tugas yang diberikan dengan soal:
 
-To use Blanja's services, users only need to create an account and enter their payment details. After that, users can browse products, add them to their shopping cart, and choose their preferred payment method.
+1. Login API
 
-With all the features and security provided, Blanja is expected to provide a safe, easy, and convenient online shopping experience for users across Indonesia.
+- API harus memvalidasi nama pengguna dan kata sandi
+- Daftar nama pengguna dan kata sandi yang valid harus disimpan di DBMS
+- DBMS apa pun diperbolehkan
+- API harus mengimplementasikan JSON Web Token (JWT)
+
+2. Get job list API
+
+- API harus diamankan dengan authorization JWT
+- API harus membuat http request ke http://dev3.dansmultipro.co.id/api/recruitment/positions.json dan mengembalikan data pekerjaan sebagai muatan respons.
+- API harus mendukung pagination
+- API harus menyediakan fungsi “pencarian” untuk mencari pekerjaan berdasarkan istilah, lokasi, penuh waktu vs paruh waktu, atau kombinasi ketiganya. Semua parameter adalah opsional.
+
+3. Get job detail API
+
+- API harus diamankan dengan authorization JWT
+- API harus membuat http request ke http://dev3.dansmultipro.co.id/api/recruitment/positions/{ID} dan mengembalikan data detail pekerjaan sebagai respons.
 
 ## Built With
 
